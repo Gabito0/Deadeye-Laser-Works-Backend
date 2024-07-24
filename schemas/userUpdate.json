@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "default": "",
+      "title": "The firstName Schema",
+      "examples": ["John"]
+    },
+    "lastName": {
+      "type": "string",
+      "default": "",
+      "title": "The lastName Schema",
+      "examples": ["Doe"]
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "default": "",
+      "title": "The email Schema",
+      "examples": ["john.doe@example.com"]
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date",
+      "default": "",
+      "title": "The birthDate Schema",
+      "examples": ["1990-01-01"]
+    }
+  },
+  "required": ["firstName", "lastName", "email", "birthDate"],
+  "additionalProperties": true
+}

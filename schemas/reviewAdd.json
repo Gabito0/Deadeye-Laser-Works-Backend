@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "integer"
+    },
+    "serviceId": {
+      "type": "integer"
+    },
+    "reviewText": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    }
+  },
+  "required": ["userId", "serviceId", "reviewText", "rating"],
+  "additionalProperties": false
+}

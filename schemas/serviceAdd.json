@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ServiceAdd",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The title of the service"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The description of the service"
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0,
+      "description": "The price of the service"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "The active status of the service"
+    }
+  },
+  "required": ["title", "description", "price", "isActive"],
+  "additionalProperties": false
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The username of the user"
+    },
+    "serviceId": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The ID of the service to be added"
+    },
+    "confirmedPrice": {
+      "type": "number",
+      "minimum": 0,
+      "description": "The confirmed price of the service"
+    },
+    "additionInfo": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Additional information related to the service"
+    }
+  },
+  "required": ["username", "serviceId", "confirmedPrice", "additionInfo"],
+  "additionalProperties": false
+}

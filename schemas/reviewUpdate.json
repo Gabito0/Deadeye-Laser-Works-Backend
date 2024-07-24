@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/reviewUpdate.json",
+  "type": "object",
+  "properties": {
+    "reviewText": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The text of the review."
+    },
+    "rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "The rating for the review, must be between 1 and 5."
+    }
+  },
+  "required": ["reviewText", "rating"],
+  "additionalProperties": false
+}
