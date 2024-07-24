@@ -13,31 +13,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// function sendConfirmationEmail(secretKey, username, from, to, next) {
-//   jwt.sign(
-//     {
-//       user: username,
-//     },
-//     secretKey,
-//     {
-//       expiresIn: "1d",
-//     },
-//     (err, emailToken) => {
-//       if (err) {
-//         return next(err);
-//       }
-//       const url = `http://localhost:3001/auth/confirmation/${emailToken}`;
-
-//       transporter.sendMail({
-//         from: from,
-//         to: to,
-//         subject: "Confirmation Email",
-//         html: `Please click this link to confirm your email: <a href="${url}">${url}</a>`,
-//       });
-//     }
-//   );
-// }
-
 function sendConfirmationEmail(secretKey, username, from, to, next) {
   jwt.sign(
     {
@@ -52,9 +27,9 @@ function sendConfirmationEmail(secretKey, username, from, to, next) {
         return next(err);
       }
 
-      const url =
-        process.env.VERIFICATION_URL ||
-        `http://localhost:5173/email-verification/${emailToken}`;
+      const url = process.env.VERIFICATION_URL
+        ? `${process.env.VERIFICATION_URL}/${emailToken}`
+        : `http://localhost:5173/email-verification/${emailToken}`;
 
       transporter.sendMail(
         {

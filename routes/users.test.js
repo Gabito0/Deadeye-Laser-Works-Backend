@@ -94,8 +94,6 @@ describe("PUT /users/:username", function () {
         lastName: "NewLast",
         email: "newemail@example.com",
         birthDate: "2000-01-01",
-        id: 1,
-        isVerified: "false",
         status: "regular",
       })
       .set("authorization", `Bearer ${u1Token}`);
@@ -108,6 +106,10 @@ describe("PUT /users/:username", function () {
         email: "newemail@example.com",
         birthDate: expect.any(String),
         isActive: true,
+        id: 1,
+        isVerified: false,
+        lastName: "NewLast",
+        status: "regular",
       },
     });
   });
